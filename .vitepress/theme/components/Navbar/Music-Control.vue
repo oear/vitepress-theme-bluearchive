@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 
-const isPlaying = ref(true) // 音乐播放状态
+const isPlaying = ref(false) // 音乐播放状态
 const music = ref<HTMLAudioElement | null>(null)
 
 const toggleMusic = () => {
