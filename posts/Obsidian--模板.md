@@ -1,5 +1,5 @@
 ---
-title: Obsidian——模板
+title: Obsidian--模板
 date: 2025-02-14
 tags:
   - Obsidian
