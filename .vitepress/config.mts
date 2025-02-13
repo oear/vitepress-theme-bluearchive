@@ -2,8 +2,8 @@ import { defineConfigWithTheme } from 'vitepress'
 import mdItCustomAttrs from 'markdown-it-custom-attrs'
 
 // 从环境变量中获取 clientID 和 clientSecret
-const clientID = import.meta.env.CLIENT_ID;
-const clientSecret = import.meta.env.CLIENT_SECRET;
+const clientID = import.meta.env.VITE_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
 
 export interface ThemeConfig {
   //navBar
