@@ -1,29 +1,34 @@
-import { defineConfigWithTheme } from 'vitepress'
-import mdItCustomAttrs from 'markdown-it-custom-attrs'
+import { defineConfigWithTheme } from 'vitepress';
+import mdItCustomAttrs from 'markdown-it-custom-attrs';
+
+// 从环境变量中获取 clientID 和 clientSecret
+const clientID = process.env.CLIENT_ID;
+const clientSecret = process.env.CLIENT_SECRET;
+
 export interface ThemeConfig {
   //navBar
-  menuList: { name: string; url: string }[]
+  menuList: { name: string; url: string }[];
 
   //banner
-  videoBanner: boolean
-  name: string
-  welcomeText: string
-  motto: string[]
-  social: { icon: string; url: string }[]
+  videoBanner: boolean;
+  name: string;
+  welcomeText: string;
+  motto: string[];
+  social: { icon: string; url: string }[];
 
   //spine
-  spineVoiceLang: 'zh' | 'jp'
+  spineVoiceLang: 'zh' | 'jp';
 
   //footer
-  footerName: string
-  poweredList: { name: string; url: string }[]
+  footerName: string;
+  poweredList: { name: string; url: string }[];
 
   //gitalk
-  clientID: string
-  clientSecret: string
-  repo: string
-  owner: string
-  admin: string[]
+  clientID: string;
+  clientSecret: string;
+  repo: 'VP_comments';
+  owner: 'oear';
+  admin: ['oear'];
 }
 
 export default defineConfigWithTheme<ThemeConfig>({
@@ -100,8 +105,8 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
 
     //gitalk配置
-    clientID: 'Ov23lia9U9wFN3WMyoKK',
-    clientSecret: 'b2418ab598c188c43a247c99e728dd2735d58c3b',
+    clientID,
+    clientSecret,
     repo: 'vitepress-theme-bluearchive',
     owner: 'Alittfre',
     admin: ['Alittfre'],
@@ -114,7 +119,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       // use more markdown-it plugins!
       md.use(mdItCustomAttrs, 'image', {
         'data-fancybox': 'gallery',
-      })
+      });
     },
   },
-})
+});
