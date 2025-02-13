@@ -2,7 +2,7 @@
 
 ![logo](.vitepress/theme/assets/icon/footLogo.svg)
 
-BA 主题博客，基于 VitePress，绝赞画饼中
+BA 主题博客，基于 VitePress，绝赞画饼中。
 
 [在线预览](https://vitepress-theme-bluearchive.vercel.app/)
 
