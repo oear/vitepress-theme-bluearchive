@@ -1,9 +1,9 @@
-import { defineConfigWithTheme } from 'vitepress';
-import mdItCustomAttrs from 'markdown-it-custom-attrs';
+import { defineConfigWithTheme } from 'vitepress'
+import mdItCustomAttrs from 'markdown-it-custom-attrs'
 
 // 从环境变量中获取 clientID 和 clientSecret
-const clientID = process.env.CLIENT_ID;
-const clientSecret = process.env.CLIENT_SECRET;
+const clientID = import.meta.env.VITE_GITALK_CLIENT_ID;
+const clientSecret = import.meta.env.VITE_GITALK_CLIENT_SECRET;
 
 export interface ThemeConfig {
   //navBar
@@ -69,10 +69,6 @@ export default defineConfigWithTheme<ThemeConfig>({
     ],
   ],
   ignoreDeadLinks: true,
-  // 生成站点地图
-  // sitemap: {
-  //   hostname: 'https://vitepress-theme-bluearchive.vercel.app',
-  // },
   title: "Sensei's 部落格",
   description: "Sensei's 部落格",
   themeConfig: {
@@ -107,9 +103,9 @@ export default defineConfigWithTheme<ThemeConfig>({
     //gitalk配置
     clientID,
     clientSecret,
-    repo: 'vitepress-theme-bluearchive',
-    owner: 'Alittfre',
-    admin: ['Alittfre'],
+    repo: 'VP_comments', // 请确保这是正确的 GitHub 仓库名，并且该仓库启用了 Issues 功能
+    owner: 'oear',
+    admin: ['oear'], // 确保管理员列表的用户名正确
   },
   markdown: {
     theme: 'solarized-dark',
@@ -119,7 +115,7 @@ export default defineConfigWithTheme<ThemeConfig>({
       // use more markdown-it plugins!
       md.use(mdItCustomAttrs, 'image', {
         'data-fancybox': 'gallery',
-      });
+      })
     },
   },
-});
+})
