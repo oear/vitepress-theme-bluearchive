@@ -1,4 +1,4 @@
---- 
+---
 title: Obsidian--模板
 date: 2025-02-14
 tags:
@@ -7,15 +7,19 @@ tags:
 head:
   - - meta
     - name: description
-      content:
+      content: 
   - - meta
     - name: keywords
       content:
 ---
 
-模板插件可以将预定义的文本片段插入到当前笔记中。
+关于Obsidian--模板的学习
 
 ---
+
+模板
+
+模板插件可以将预定义的文本片段插入到当前笔记中。
 
 ## 设置模板文件夹 
 
@@ -34,5 +38,3 @@ head:
 ## 模板变量 
 
 你可以使用 _模板变量_ 为模板添加动态信息。这样，当你在当前笔记中插入模板时，模板插件会自动将变量替换为特定值。
-
-
