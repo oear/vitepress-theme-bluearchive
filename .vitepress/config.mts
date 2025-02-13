@@ -1,9 +1,15 @@
-import { defineConfigWithTheme } from 'vitepress'
+import { defineConfigWithTheme } from 'vitepress' 
 import mdItCustomAttrs from 'markdown-it-custom-attrs'
+import { loadEnv } from 'vite'  // 导入 loadEnv 来加载环境变量
 
 // 从环境变量中获取 clientID 和 clientSecret
-const clientID = import.meta.env.VITE_CLIENT_ID;
-const clientSecret = import.meta.env.VITE_CLIENT_SECRET;
+const env = loadEnv(process.env.NODE_ENV || 'development', process.cwd())  // 加载环境变量
+const clientID = env.VITE_CLIENT_ID
+const clientSecret = env.VITE_CLIENT_SECRET
+
+// 打印所有环境变量用于调试
+console.log('VITE_CLIENT_ID:', clientID)  // 打印出 VITE_CLIENT_ID 的值
+console.log('VITE_CLIENT_SECRET:', clientSecret)  // 打印出 VITE_CLIENT_SECRET 的值
 
 export interface ThemeConfig {
   //navBar

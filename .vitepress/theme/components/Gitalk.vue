@@ -11,6 +11,8 @@ import md5 from 'md5'
 
 // 获取 VitePress 配置
 const themeConfig = useData().theme.value
+const env = import.meta.env  // 获取环境变量
+
 declare var Gitalk: any
 
 onMounted(() => {
@@ -18,8 +20,8 @@ onMounted(() => {
   if (document.getElementById('gitalk-container').children.length === 0) {
     // 配置 Gitalk 参数
     const commentConfig = {
-      clientID: import.meta.env.VITE_CLIENT_ID, // 从环境变量中获取 Client ID
-      clientSecret: import.meta.env.VITE_CLIENT_SECRET, // 从环境变量中获取 Client Secret
+      clientID: env.VITE_CLIENT_ID, // 从环境变量中获取 Client ID
+      clientSecret: env.VITE_CLIENT_SECRET, // 从环境变量中获取 Client Secret
       repo: themeConfig.repo,  // 使用从配置中获取的仓库名称
       owner: themeConfig.owner,  // 使用从配置中获取的仓库拥有者
       admin: themeConfig.admin,  // 使用从配置中获取的管理员列表
