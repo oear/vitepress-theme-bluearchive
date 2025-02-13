@@ -1,4 +1,4 @@
----
+--- 
 title: Obsidian--模板
 date: 2025-02-14
 tags:
@@ -37,16 +37,16 @@ head:
 
 |变量|描述|
 |---|---|
-|`{{title}}`|当前笔记的标题。|
-|`{{date}}`|当前日期。**默认格式：** `YYYY-MM-DD`。|
-|`{{time}}`|当前时间。**默认格式：** `HH:mm`。|
+|`\{{title\}}`|当前笔记的标题。|
+|`\{{date\}}`|当前日期。**默认格式：** `YYYY-MM-DD`。|
+|`\{{time\}}`|当前时间。**默认格式：** `HH:mm`。|
 
-`{{date}}` 和 `{{time}}` 都允许你使用 _格式字符串_ 来进一步更改默认格式。
+`\{{date\}}` 和 `\{{time\}}` 都允许你使用 _格式字符串_ 来进一步更改默认格式。
 
-要设置格式字符串，需要添加一个冒号（`:`），然后在后面跟一串[Moment.js格式标记](https://momentjs.com/docs/#/displaying/format/)，例如 `{{date:YYYY-MM-DD}}`。
+要设置格式字符串，需要添加一个冒号（`:`），然后在后面跟一串[Moment.js格式标记](https://momentjs.com/docs/#/displaying/format/)，例如 `\{{date:YYYY-MM-DD\}}`。
 
 你可以在**设置 → 模板 → 日期格式**和**设置 → 模板 → 时间格式**下更改默认日期和时间格式。
 
 提示
 
-你也可以在[日记](https://publish.obsidian.md/help-zh/%E6%A0%B8%E5%BF%83%E6%8F%92%E4%BB%B6/%E6%97%A5%E8%AE%B0)和[时间戳笔记生成器](https://publish.obsidian.md/help-zh/%E6%A0%B8%E5%BF%83%E6%8F%92%E4%BB%B6/%E6%97%B6%E9%97%B4%E6%88%B3%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%99%A8)插件中使用`{{date}}`和`{{time}}`模板变量。
+你也可以在[日记](https://publish.obsidian.md/help-zh/%E6%A0%B8%E5%BF%83%E6%8F%92%E4%BB%B6/%E6%97%A5%E8%AE%B0)和[时间戳笔记生成器](https://publish.obsidian.md/help-zh/%E6%A0%B8%E5%BF%83%E6%8F%92%E4%BB%B6/%E6%97%B6%E9%97%B4%E6%88%B3%E7%AC%94%E8%AE%B0%E7%94%9F%E6%88%90%E5%99%A8)插件中使用`\{{date\}}`和`\{{time\}}`模板变量。
