@@ -1,11 +1,11 @@
 <template>
   <div class="gitalk-container">
-    <div id="gitalk-container"></div>
+    <div ref="gitalkContainer"></div>
   </div>
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue'
+import { onMounted, ref } from 'vue'
 import { useData } from 'vitepress'
 import md5 from 'md5'
 
@@ -13,25 +13,31 @@ import md5 from 'md5'
 const themeConfig = useData().theme.value
 const env = import.meta.env  // 获取环境变量
 
-declare var Gitalk: any
+declare global {
+  interface Window {
+    Gitalk: any
+  }
+}
+
+// 引用 DOM 元素
+const gitalkContainer = ref<HTMLElement | null>(null)
 
 onMounted(() => {
-  // 检查 Gitalk 是否已经渲染，防止重复渲染
-  if (document.getElementById('gitalk-container').children.length === 0) {
+  if (gitalkContainer.value && gitalkContainer.value.children.length === 0) {
     // 配置 Gitalk 参数
     const commentConfig = {
-      clientID: env.VITE_CLIENT_ID, // 从环境变量中获取 Client ID
-      clientSecret: env.VITE_CLIENT_SECRET, // 从环境变量中获取 Client Secret
+      clientID: env.VITE_CLIENT_ID,  // 从环境变量中获取 Client ID
+      clientSecret: env.VITE_CLIENT_SECRET,  // 从环境变量中获取 Client Secret
       repo: themeConfig.repo,  // 使用从配置中获取的仓库名称
       owner: themeConfig.owner,  // 使用从配置中获取的仓库拥有者
       admin: themeConfig.admin,  // 使用从配置中获取的管理员列表
-      id: md5(location.pathname).toString(), // 使用 MD5 对页面路径进行哈希生成唯一 ID
-      distractionFreeMode: false, // 启用干扰自由模式
+      id: md5(location.pathname),  // 使用 MD5 对页面路径进行哈希生成唯一 ID
+      distractionFreeMode: false,  // 启用干扰自由模式
     }
 
     try {
-      const gitalk = new Gitalk(commentConfig)
-      gitalk.render('gitalk-container')  // 渲染评论区到指定容器
+      const gitalk = new window.Gitalk(commentConfig)
+      gitalk.render(gitalkContainer.value)  // 渲染评论区到指定容器
     } catch (error) {
       console.error("Gitalk 渲染失败: ", error)
     }
