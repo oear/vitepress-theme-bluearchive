@@ -86,7 +86,7 @@ onMounted(() => {
 }
 
 .music-progress {
-  width: 200px;
+  width: 160px;
   margin-top: 10px;
 }
 

@@ -23,7 +23,7 @@
     <ToTop></ToTop>
     <!-- 背景音乐元素 -->
     <audio id="background-music" loop>
-      <source src="./assets/banner/bgm.mp3" type="audio/mpeg" />
+      <source src="./assets/banner/bgm1.mp3" type="audio/mpeg" />
     </audio>
   </template>
   <NotFound v-else></NotFound>
