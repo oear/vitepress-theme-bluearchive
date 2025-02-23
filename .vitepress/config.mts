@@ -64,7 +64,7 @@ export default defineConfigWithTheme<ThemeConfig>({
     videoBanner: false,
     name: "Sensei's 部落格",
     welcomeText: 'Hello, 来访者',
-    motto: ['和你的日常，就是奇迹。','Everyday moments spent with you are nothing short of miracles.', '何気ない日常で、ほんの少しの奇跡を見つける物語。'],
+    motto: ['和你的日常，就是奇迹。'],
     social: [
       { icon: 'github', url: 'https://github.com/' },
       { icon: 'bilibili', url: 'https://www.bilibili.com/' },
